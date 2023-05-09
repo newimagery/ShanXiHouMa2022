@@ -18,10 +18,10 @@
 #define MQTT_LOG_ENABLED 1
 // Include library
 #include <MqttClient.h>
-#define LigntRelay  12
+#define LigntRelay 12
 
-#define HW_UART_SPEED                 115200L
-#define MQTT_ID                     "LIGHT_A_"
+#define HW_UART_SPEED 115200L
+#define MQTT_ID "LIGHT_A_"
 
 const char* ssid = "zhongkong";
 const char* password = "1234567890";
@@ -29,19 +29,19 @@ const char* mqtt_server = "192.168.1.201";
 
 const char* TOPIC_PLAY = "PlayingA";
 
-const char* MSG_PLAY   = "play";
-const char* MSG_PAUS   = "pause";
-const char* MSG_STOP   = "stop";
+const char* MSG_PLAY = "play";
+const char* MSG_PAUS = "pause";
+const char* MSG_STOP = "stop";
 
 
-unsigned long playTime = 260000;//ms
+unsigned long playTime = 260000;  //ms
 
-static MqttClient *mqtt = NULL;
+static MqttClient* mqtt = NULL;
 static WiFiClient network;
 
-#define LOG_PRINTFLN(fmt, ...)  logfln(fmt, ##__VA_ARGS__)
+#define LOG_PRINTFLN(fmt, ...) logfln(fmt, ##__VA_ARGS__)
 #define LOG_SIZE_MAX 128
-void logfln(const char *fmt, ...) {
+void logfln(const char* fmt, ...) {
   char buf[LOG_SIZE_MAX];
   va_list ap;
   va_start(ap, fmt);
@@ -51,7 +51,7 @@ void logfln(const char *fmt, ...) {
 }
 
 // ============== Object to supply system functions ============================
-class System: public MqttClient::System {
+class System : public MqttClient::System {
 public:
 
   unsigned long millis() const {
