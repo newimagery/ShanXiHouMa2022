@@ -26,10 +26,12 @@
 
 //const char* ssid = "NewImagery";
 //const char* password = "*#01234567890";
+//const char* mqtt_server = "iServer";
+
 const char* ssid = "zhongkong";
 const char* password = "1234567890";
 const char* mqtt_server = "192.168.1.201";
-//const char* mqtt_server = "192.168.10.1";
+
 
 //const char* TOPIC_PROJ = "ProjectorA";
 const char* TOPIC_PLAY = "PlayingA";
