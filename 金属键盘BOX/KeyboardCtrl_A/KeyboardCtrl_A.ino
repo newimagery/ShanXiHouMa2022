@@ -11,6 +11,8 @@
  * (See accompanying file LICENSE or copy at http://opensource.org/licenses/MIT)
  *******************************************************************************
  */
+//这个代码用在山西侯马彭真馆的『山西建党』子项目中
+//2023-05-09
 
 #include <Arduino.h>
 #include <ESP8266WiFi.h>
@@ -22,10 +24,14 @@
 
 
 #define HW_UART_SPEED 9600L
-#define MQTT_ID "KEYBOARD_A_"
+#define MQTT_ID "KEYBOARD_AA_"//之前用的是A但是另一个应该是H 也被写成了A 所以这个地方就改成了AA 不然会引起ID冲突
 
+//测试环境中的WIFI
 //const char* ssid = "NewImagery";
 //const char* password = "*#01234567890";
+//const char* mqtt_server = "iServer";
+
+//使用环境中的WIFI
 const char* ssid = "zhongkong";
 const char* password = "1234567890";
 const char* mqtt_server = "192.168.1.201";

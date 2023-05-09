@@ -3,7 +3,8 @@
 void setup() {
   // Setup hardware serial for logging
   Serial.begin(HW_UART_SPEED);
-  while (!Serial);
+  while (!Serial)
+    ;
 
   // Setup WiFi network
   WiFi.mode(WIFI_STA);
@@ -21,7 +22,7 @@ void setup() {
   // Setup MqttClient
   MqttClient::System *mqttSystem = new System;
   MqttClient::Logger *mqttLogger = new MqttClient::LoggerImpl<HardwareSerial>(Serial);
-  MqttClient::Network * mqttNetwork = new MqttClient::NetworkClientImpl<WiFiClient>(network, *mqttSystem);
+  MqttClient::Network *mqttNetwork = new MqttClient::NetworkClientImpl<WiFiClient>(network, *mqttSystem);
   //// Make 128 bytes send buffer
   MqttClient::Buffer *mqttSendBuffer = new MqttClient::ArrayBuffer<128>();
   //// Make 128 bytes receive buffer
@@ -35,6 +36,5 @@ void setup() {
   //// Make client object
   mqtt = new MqttClient(
     mqttOptions, *mqttLogger, *mqttSystem, *mqttNetwork, *mqttSendBuffer,
-    *mqttRecvBuffer, *mqttMessageHandlers
-  );
+    *mqttRecvBuffer, *mqttMessageHandlers);
 }

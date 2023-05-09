@@ -39,6 +39,7 @@ static WiFiClient network;
 
 #define LOG_PRINTFLN(fmt, ...)  logfln(fmt, ##__VA_ARGS__)
 #define LOG_SIZE_MAX 128
+
 void logfln(const char *fmt, ...) {
   char buf[LOG_SIZE_MAX];
   va_list ap;
